@@ -2,7 +2,7 @@ package encryptdecrypt;
 
 import java.util.Scanner;
 
-public class Main {
+public class KeyEncryption {
 
     public String keyEncrypt(String input, int key){
         String output = "";
@@ -31,8 +31,9 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        Main k = new Main();
+        KeyEncryption k = new KeyEncryption();
         Scanner s = new Scanner(System.in);
+        System.out.println("Please enter text");
         String keyIn = s.nextLine();
         int keyNum = s.nextInt();
         System.out.println(k.keyEncrypt(keyIn, keyNum));
