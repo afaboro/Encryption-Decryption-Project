@@ -4,6 +4,12 @@ import java.util.Scanner;
 
 public class KeyEncryption {
 
+    /**
+     * This method is used to encrypt a message
+     * @param input message to be encrypted
+     * @param key key to encrypt input
+     * @return encrypted message
+     */
     public String keyEncrypt(String input, int key){
         String output = "";
         String alpha = "abcdefghijklmnopqrstuvwxyz";
