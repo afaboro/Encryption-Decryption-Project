@@ -1,5 +1,8 @@
 package encryptdecrypt;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
@@ -12,7 +15,6 @@ public class Main {
         }
         return "Unknown option";
     }
-
     public String decrypt(String in, int key){
         String out = "";
         int newValue = 0;
@@ -26,7 +28,6 @@ public class Main {
         }
         return out;
     }
-
     public String encrypt(String in, int key){
         String out = "";
         int newValue = 0;
@@ -40,6 +41,50 @@ public class Main {
         }
         return out;
     }
+
+    /*public File outputFile(String o, String message, int key) throws IOException {
+        String s = choose(o, String message, key);
+        String path = "";
+        File file = new File(path);
+        try (FileWriter f = new FileWriter(file)) {
+
+        }
+
+
+        return out;
+    }*/
+
+    public void eightArgs(String[] args){
+        String mode = "";
+        String msg = "";
+        String inFile = "";
+        String outFile = "";
+        int key = 0;
+
+        for(int i = 0; i < args.length; i++){
+            if(i+1 < args.length){
+                if(i % 2 == 0){
+                    switch(args[i]){
+                        case "-mode":
+                            mode = args[i+1];
+                            break;
+                        case "-key":
+                            key = Integer.parseInt(args[i+1]);
+                            break;
+                        case "-in":
+                            inFile = args[i+1];
+                            break;
+                        case "out":
+                            outFile = args[i+1];
+                            break;
+                    }
+                }
+            }
+        }
+
+    }
+
+    public void sevenArgs(String[] args){}
 
     /**
      * This method incorporates command line arguments with 6 arguments
